@@ -1,0 +1,62 @@
+@import '../../styles/breakpoints.scss';
+@import '../../styles/variables.scss';
+
+.header {
+  &__logo {
+    margin-left: 10px;
+    @include for-medium-screen {
+      margin-left: 20px;
+    }
+    @include for-large-screen {
+      margin-left: 100px;
+      max-width: 180px;
+    }
+
+    & a {
+      display: block;
+      background: url('../../img.logo/hederlogo.png') 0 0 / contain no-repeat;
+      width: 125px;
+      height: 47px;
+      @include for-medium-screen {
+        width: 180px;
+        height: 68px;
+      }
+    }
+  }
+}
+
+.navigation {
+  display: none;
+  @include for-large-screen {
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+  }
+  &__button {
+    display: block;
+    font-size: 30px;
+    color: $mainTextColor;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+}
+.navigation__list {
+  @include for-medium-screen {
+    display: flex;
+    gap: 60px;
+  }
+}
+.navigation__list-item {
+  @include for-medium-screen {
+    font-weight: $fontWeightLarge;
+    font-size: 22px;
+  }
+}
+
+.navigation__button {
+  @include for-medium-screen {
+    display: none;
+  }
+}

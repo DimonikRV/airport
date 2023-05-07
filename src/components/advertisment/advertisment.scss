@@ -1,0 +1,60 @@
+@import '../../styles/breakpoints.scss';
+@import '../../styles/variables.scss';
+
+.advertisment {
+  margin-top: 30px;
+  background: $backgroundColor;
+  @include for-medium-screen {
+    flex: 1;
+    margin: 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 80px 0 0;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: $headerBackground;
+    overflow: hidden;
+    border-radius: 0 60px 0 0;
+    color: $mainTextColor;
+    padding: 10px 25px 10px 25px;
+    margin-bottom: 30px;
+    @include for-medium-screen {
+      padding: 10px;
+      margin: 20px 0;
+    }
+  }
+}
+
+.how-to-get-btn {
+  @include for-medium-screen {
+    display: flex;
+  }
+  &__content {
+    margin-right: 20px;
+  }
+  &__text {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    text-transform: uppercase;
+  }
+  &__aditional-text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-transform: uppercase;
+  }
+  & p {
+    @include for-medium-screen {
+      display: block;
+      background: url('../../img.logo/covid-btn.png') 0 0 / contain no-repeat;
+      width: 40px;
+      height: 60px;
+      margin: 5px 25px 0 0;
+    }
+  }
+}

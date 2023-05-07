@@ -1,0 +1,21 @@
+$sm: 320px;
+$md: 768px;
+$lg: 1024px;
+
+@mixin for-small-screen {
+  @media screen and (min-width: $sm) {
+    @content;
+  }
+}
+
+@mixin for-medium-screen {
+  @media screen and (min-width: $md) {
+    @content;
+  }
+}
+
+@mixin for-large-screen {
+  @media screen and (min-width: $lg) {
+    @content;
+  }
+}

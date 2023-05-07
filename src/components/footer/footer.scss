@@ -1,0 +1,200 @@
+@import '../../styles/breakpoints.scss';
+@import '../../styles/variables.scss';
+
+.footer-menu {
+  @include for-medium-screen {
+    display: flex;
+    justify-content: center;
+    color: $mainTextColor;
+    padding: 30px 0 15px 0;
+    border-bottom: 1px solid $mainTextColor;
+    @include for-large-screen {
+      padding: 40px 10px;
+    }
+    &__social-icon {
+      @include for-medium-screen {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        padding: 10px;
+        margin-left: 10px;
+      }
+    }
+  }
+}
+.nav-links {
+  @include for-small-screen {
+    display: flex;
+    flex-direction: row;
+  }
+  @include for-medium-screen {
+    flex-direction: column;
+  }
+  @include for-large-screen {
+    flex-direction: row;
+  }
+  &__item {
+    @include for-medium-screen {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+.nav-item {
+  display: none;
+  border-bottom: 1px solid $mainTextColor;
+  @include for-medium-screen {
+    flex: 1 1 45%;
+    display: flex;
+    padding: 0 10px;
+    font-size: 18px;
+    line-height: 1.5;
+    border-bottom: none;
+    @include for-large-screen {
+      padding: 0 5px;
+    }
+  }
+  &__list {
+    display: none;
+    @include for-medium-screen {
+      display: block;
+    }
+    @include for-large-screen {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &__link {
+    @include for-large-screen {
+      padding: 0 5px;
+    }
+  }
+}
+.info-footer-container {
+  @include for-medium-screen {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.footer__contacts {
+  @include for-medium-screen {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 15px;
+  }
+  @include for-large-screen {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 20px;
+    margin-top: 0;
+    margin-left: 40px;
+  }
+}
+.info-block {
+  @include for-medium-screen {
+    align-self: flex-start;
+    margin: 0 0 15px 10px;
+  }
+  @include for-large-screen {
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+  }
+  &__phone > a {
+    @include for-medium-screen {
+      font-size: 20px;
+    }
+  }
+}
+.follow-us {
+  &__social-links {
+    @include for-medium-screen {
+      display: flex;
+    }
+  }
+}
+.footer-sub-menu {
+  @include for-medium-screen {
+    flex: 1 1 80%;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__logo {
+    display: block;
+    background: url('../../img.logo/logo_white.png') 0 0 / contain no-repeat;
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    &-sol {
+      display: block;
+      background: url('../../img.logo/smplLogo.png') 0 0 / contain no-repeat;
+      width: 90px;
+      height: 40px;
+    }
+  }
+  &__link {
+    display: flex;
+    margin: 10px 0;
+  }
+  &__item-sol > a {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.social-link {
+  display: inline-block;
+}
+.icon-link {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: 5px 20px 5px 0;
+}
+
+.facebook-icon__link {
+  background: url('../../img.logo/facebook-svgrepo-com\ \(2\).svg') center no-repeat;
+}
+.twitter-icon__link {
+  background: url('../../img.logo/twitter-svgrepo-com\ \(1\).svg') center no-repeat;
+}
+.instagram-icon__link {
+  background: url('../../img.logo/instagram-icon-svgrepo-com.svg') center no-repeat;
+}
+.youtube-icon__link {
+  background: url('../../img.logo/youtube-svgrepo-com\ \(1\).svg') center no-repeat;
+}
+.linkedin-icon__link {
+  background: url('../../img.logo/linkedin-svgrepo-com\ \(2\).svg') center no-repeat;
+}
+.sub-footer {
+  @include for-medium-screen {
+    display: flex;
+    padding: 15px 20px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  font-size: 12px;
+  line-height: 1.5;
+  padding-bottom: 15px;
+  &__row {
+    @include for-medium-screen {
+      display: flex;
+    }
+    & > * {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.copyright {
+  flex: 1 1 20%;
+  color: $mainTextColor;
+  margin: 10px 60px 0 0;
+  @include for-large-screen {
+    margin-right: 60px;
+  }
+}

@@ -1,0 +1,57 @@
+@import '../../styles/breakpoints.scss';
+@import '../../styles/variables.scss';
+
+.categories {
+  flex: 1;
+  display: flex;
+  &__item {
+    flex: 1 0 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1eb7ee;
+    color: $mainTextColor;
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 10px 15px;
+    border-radius: 60px 60px 0 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    .icon {
+      &-description {
+        text-transform: uppercase;
+      }
+      & svg {
+        width: 40px;
+        height: 28px;
+        fill: $mainTextColor;
+        margin-right: 5px;
+      }
+    }
+    &-arrival {
+      margin-left: -100px;
+    }
+    &_active {
+      background: $tableBackground;
+      z-index: 2;
+      .icon svg {
+        fill: $secondaryTextColor;
+      }
+      .icon-description {
+        color: $secondaryTextColor;
+      }
+    }
+  }
+}
+
+.way-to {
+  flex: 1;
+}
+.icon-description {
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: $mainTextColor;
+}

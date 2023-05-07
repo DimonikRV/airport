@@ -1,0 +1,163 @@
+@import '../../styles/breakpoints.scss';
+@import '../../styles/variables.scss';
+
+.flights-table__item {
+  padding: 5px;
+  -webkit-box-shadow: 3px 0 10px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 3px 0 10px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 3px 0 10px 0 rgba(0, 0, 0, 0.2);
+  &:nth-child(odd) {
+    background-color: $backgroundColor;
+  }
+  &:nth-child(even) {
+    background-color: $tableBackground;
+  }
+  @include for-medium-screen {
+    flex: 1;
+    display: flex;
+    padding: 10px 5px 10px 30px;
+  }
+  @include for-large-screen {
+    padding: 10px 40px;
+    &:hover .details-field a {
+      color: $secondaryTextColor;
+    }
+  }
+}
+.item-slot {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 5px 10px;
+  margin-right: 30px;
+  color: $titleColor;
+
+  @include for-medium-screen {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 5px 0 0 15px;
+  }
+  @include for-large-screen {
+    padding-left: 15px;
+  }
+}
+.time-flight {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.city-status-logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.terminal-field {
+  font-weight: $fontWeightLarge;
+  @include for-medium-screen {
+    justify-content: center;
+    flex: 0 0 8%;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    font-size: 22px;
+    color: $secondaryTextColor;
+    border: 2px solid $secondaryTextColor;
+    border-radius: 50%;
+  }
+  @include for-large-screen {
+    margin: 0 50px 0 20px;
+    flex: 0 0 5%;
+  }
+}
+.time-field {
+  @include for-medium-screen {
+    margin: 0;
+    justify-content: center;
+  }
+  @include for-large-screen {
+    justify-content: flex-start;
+  }
+}
+.way-field {
+  @include for-medium-screen {
+    margin: 0 30px 0 50px;
+    justify-content: flex-start;
+  }
+  @include for-large-screen {
+    margin: 0;
+  }
+}
+.status-field {
+  @include for-medium-screen {
+    margin-right: 0;
+    padding-left: 20px;
+  }
+  @include for-large-screen {
+    padding-left: 15px;
+  }
+}
+.company-name {
+  display: none;
+  @include for-medium-screen {
+    display: flex;
+    margin: 0 10px;
+  }
+  & p {
+    @include for-medium-screen {
+      font-size: 14px;
+      margin-left: 5px;
+    }
+    @include for-large-screen {
+      font-size: 16px;
+    }
+  }
+}
+.flight-field {
+  font-weight: $fontWeightLarge;
+  @include for-medium-screen {
+    margin-right: 0;
+    justify-content: center;
+    padding-right: 10px;
+  }
+  @include for-large-screen {
+    margin-right: 10;
+  }
+}
+
+.details-field {
+  @include for-medium-screen {
+    display: none;
+    justify-content: center;
+    margin-right: 0;
+    color: transparent;
+  }
+  @include for-large-screen {
+    display: flex;
+  }
+}
+.details-field {
+  & a {
+    @include for-large-screen {
+      font-size: 18px;
+      font-weight: $fontWeightLarge;
+      color: transparent;
+      transition: all 0.2s ease;
+    }
+  }
+}
+.logo {
+  display: none;
+  @include for-medium-screen {
+    display: inline-block;
+  }
+  & img {
+    width: 60px;
+    height: 15px;
+    @include for-large-screen {
+      height: 40px;
+    }
+  }
+}

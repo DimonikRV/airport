@@ -1,0 +1,82 @@
+@import '../../styles/breakpoints.scss';
+@import '../../styles/variables.scss';
+
+.navdate-content {
+  background: #fff;
+  @include for-medium-screen {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 20px;
+  }
+}
+.search-results {
+  &__content {
+    display: flex;
+    padding: 5px 0;
+    @include for-medium-screen {
+      padding: 10px 20px;
+    }
+  }
+}
+
+.calendar {
+  @include for-medium-screen {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 40px;
+  }
+  &-datepicker {
+    position: absolute;
+    z-index: 3;
+    background: $headerBackground url('../../img.logo/calendar-1322-svgrepo-com.svg') center
+      no-repeat;
+    height: 40px;
+    width: 40px;
+    margin-top: 15px;
+    &__input {
+      position: absolute;
+      top: -25px;
+      height: 13px;
+      width: 100%;
+      font-weight: $fontWeightRegular;
+      color: $secondaryTextColor;
+      border: none;
+      outline: none;
+      overflow: hidden;
+    }
+  }
+}
+.dates {
+  border-bottom: 2px solid $textColor;
+  margin-left: 40px;
+
+  @include for-medium-screen {
+    flex: 0 1 25%;
+    display: inline-flex;
+    justify-content: space-between;
+    margin-left: 20px;
+  }
+  &__item {
+    display: inline-block;
+    padding: 5px 0 10px 0;
+    margin: 0 5px;
+    color: $textColor;
+    background: transparent;
+    border: none;
+    @include for-medium-screen {
+      cursor: pointer;
+    }
+  }
+  &-num {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  &-title {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: $fontWeightLarge;
+  }
+}

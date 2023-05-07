@@ -1,0 +1,28 @@
+@import '../../styles/breakpoints.scss';
+@import '../../styles/variables.scss';
+
+.navigation-mobile {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  padding: 15px 0;
+  @include for-medium-screen {
+    display: none;
+  }
+}
+.navigation-mobile__list-item {
+  padding: 5px 15px;
+  font-size: 24px;
+  line-height: 2;
+  font-weight: 700;
+  color: $mainTextColor;
+  background-color: $headerBackground;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: $backgroundColor;
+    & a {
+      color: $secondaryTextColor;
+    }
+  }
+}

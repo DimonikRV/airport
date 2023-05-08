@@ -25,10 +25,6 @@ const Layout = () => {
 
   const setSearchParams = useSearchParams()[1];
 
-  const setParams = useCallback(() => {
-    const currentDate = { date: moment().format('DD-MM-YYYY') };
-  }, []);
-
   useEffect(() => {
     dispatch(fetchFlights());
   }, [dispatch]);

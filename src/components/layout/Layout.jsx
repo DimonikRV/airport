@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchFlights } from '../../slices/search.flights.slice';
 import { useLocation, useParams, useSearchParams } from 'react-router-dom';
@@ -22,16 +22,20 @@ const Layout = () => {
   const newParams = qs.parse(params.search, { ignoreQueryPrefix: true });
 
   const dispatch = useDispatch();
-
   const setSearchParams = useSearchParams()[1];
+
+  const currentDay = useMemo(
+    () => (newParams?.date ? newParams : { date: moment().format('DD-MM-YYYY') }),
+    [newParams],
+  );
 
   useEffect(() => {
     dispatch(fetchFlights());
   }, [dispatch]);
 
   useEffect(() => {
-    URLSearchParams.set('date', { date: moment().format('DD-MM-YYYY') });
-  }, []);
+    setSearchParams(currentDay);
+  }, [currentDay, setSearchParams]);
 
   const status = useSelector(state => state.flights.status);
 

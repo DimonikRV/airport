@@ -33,9 +33,7 @@ const Layout = () => {
     dispatch(fetchFlights());
   }, [dispatch]);
 
-  useEffect(() => {
-    return setParams();
-  }, [setParams]);
+  useEffect(() => setParams(), [setParams]);
 
   const status = useSelector(state => state.flights.status);
 

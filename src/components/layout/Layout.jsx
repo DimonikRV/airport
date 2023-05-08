@@ -25,14 +25,12 @@ const Layout = () => {
 
   const setSearchParams = useSearchParams()[1];
 
-  const currentDate = { date: moment().format('DD-MM-YYYY') };
-
   useEffect(() => {
     dispatch(fetchFlights());
   }, [dispatch]);
 
   useEffect(() => {
-    setSearchParams(currentDate);
+    URLSearchParams.set('date', { date: moment().format('DD-MM-YYYY') });
   }, []);
 
   const status = useSelector(state => state.flights.status);

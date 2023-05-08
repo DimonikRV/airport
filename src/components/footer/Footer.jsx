@@ -109,39 +109,29 @@ const Footer = () => {
               <h4>Приєднуйтесь до нас</h4>
               <ul className="follow-us__social-links">
                 <li className="facebook-icon social-link">
-                  <a
-                    className="facebook-icon__link icon-link"
-                    target="_blank"
-                    href="https://www.facebook.com/KyivAirport"
-                  />
+                  <a href="/some/valid/uri" className="facebook-icon__link icon-link">
+                    <i className="fa-brands fa-facebook-f"></i>
+                  </a>
                 </li>
                 <li className="twitter-icon social-link">
-                  <a
-                    className="twitter-icon__link icon-link"
-                    target="_blank"
-                    href="https://twitter.com/KyivAirport"
-                  />
+                  <a href="/some/valid/uri" className="twitter-icon__link icon-link">
+                    <i className="fa-brands fa-twitter"></i>
+                  </a>
                 </li>
                 <li className="instagram-icon social-link">
-                  <a
-                    className="instagram-icon__link icon-link"
-                    target="_blank"
-                    href="https://www.instagram.com/kyivairport"
-                  />
+                  <a href="/some/valid/uri" className="instagram-icon__link icon-link">
+                    <i className="fa-brands fa-instagram"></i>
+                  </a>
                 </li>
                 <li className="youtube-icon social-link">
-                  <a
-                    className="youtube-icon__link icon-link"
-                    target="_blank"
-                    href="https://www.youtube.com/channel/UC-YNjGc3PCb60YCf82-qi_Q/feed"
-                  ></a>
+                  <a href="/some/valid/uri" className="youtube-icon__link icon-link">
+                    <i className="fa-brands fa-youtube"></i>
+                  </a>
                 </li>
                 <li className="linkedin-icon social-link">
-                  <a
-                    className="linkedin-icon__link icon-link"
-                    target="_blank"
-                    href="https://www.linkedin.com/company/airportkyiv"
-                  />
+                  <a href="/some/valid/uri" className="linkedin-icon__link icon-link">
+                    <i className="fa-brands fa-linkedin"></i>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -157,7 +147,7 @@ const Footer = () => {
             </div>
             <ul className="footer-sub-menu">
               <li className="footer-sub-menu__item">
-                <a className="footer-sub-menu__link" href="https://ufuture.com/uk/" target="_blank">
+                <a className="footer-sub-menu__link" href="https://ufuture.com/uk/">
                   <span>
                     Part of
                     <b>
@@ -170,7 +160,7 @@ const Footer = () => {
                 </a>
               </li>
               <li className="footer-sub-menu__item-sol">
-                <a href="http://smpl.solutions" target="_blank" className="logo-simpl">
+                <a href="http://smpl.solutions" className="logo-simpl">
                   <span> Розробка сайту </span>
                   <span className="footer-sub-menu__logo-sol"></span>
                 </a>

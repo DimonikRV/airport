@@ -16,9 +16,6 @@ export const getByType = (type, flightsData) =>
   flightsData.filter(flights => flights.type === type);
 
 export const filterByDate = (date, flightsData) => {
-  console.log(date);
-  console.log(flightsData);
-
   return flightsData.filter(flight =>
     moment(flight.departureDateExpected).isSame(moment(date, 'DD-MM-YYYY'), 'day'),
   );
@@ -67,8 +64,6 @@ export const sortByDate = (filterData, pathname) => {
   }
   let sort;
   if (pathname === '/departures') {
-    console.log(filterData);
-    console.log(pathname);
     sort = filterData.sort((a, b) => a.departureDateExpected - b.departureDateExpected);
   } else {
     sort = filterData.sort((a, b) => a.arrivalDateExpected - b.arrivalDateExpected);

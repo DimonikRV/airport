@@ -10,7 +10,7 @@ const today = moment();
 const tomorrow = moment().add(1, 'day');
 
 const SearchCalendar = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const setSearchParams = useSearchParams()[1];
   const [startDate, setStartDate] = useState(null);
 
   const handleGetCalendarDate = date => {

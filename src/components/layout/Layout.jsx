@@ -23,15 +23,19 @@ const Layout = () => {
 
   const dispatch = useDispatch();
 
-  const [searchParams, setSearchParams] = useSearchParams();
+  const setSearchParams = useSearchParams()[1];
+
+  const currentDate = { date: moment().format('DD-MM-YYYY') };
+
+  const setParams = setSearchParams(currentDate);
 
   useEffect(() => {
     dispatch(fetchFlights());
   }, [dispatch]);
 
   useEffect(() => {
-    setSearchParams({ date: moment().format('DD-MM-YYYY') });
-  }, []);
+    return setParams();
+  }, [setParams]);
 
   const status = useSelector(state => state.flights.status);
 

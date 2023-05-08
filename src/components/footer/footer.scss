@@ -149,27 +149,11 @@
   display: inline-block;
 }
 .icon-link {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
+  font-size: 30px;
+  color: $mainTextColor;
   margin: 5px 20px 5px 0;
 }
 
-.facebook-icon__link {
-  background: url('../../img.logo/facebook-svgrepo-com\ \(2\).svg') center no-repeat;
-}
-.twitter-icon__link {
-  background: url('../../img.logo/twitter-svgrepo-com\ \(1\).svg') center no-repeat;
-}
-.instagram-icon__link {
-  background: url('../../img.logo/instagram-icon-svgrepo-com.svg') center no-repeat;
-}
-.youtube-icon__link {
-  background: url('../../img.logo/youtube-svgrepo-com\ \(1\).svg') center no-repeat;
-}
-.linkedin-icon__link {
-  background: url('../../img.logo/linkedin-svgrepo-com\ \(2\).svg') center no-repeat;
-}
 .sub-footer {
   @include for-medium-screen {
     display: flex;

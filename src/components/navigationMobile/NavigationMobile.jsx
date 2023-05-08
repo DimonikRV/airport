@@ -13,22 +13,22 @@ const NavigationMobile = ({ handleIsVisible }) => {
     <nav className="header__navigation-mobile navigation-mobile">
       <ul className="navigation-mobile__list" onClick={HandleCheck}>
         <li className="navigation-mobile__list-item">
-          <a href="#">Passangers</a>
+          <a href="/some/valid/uri">Passangers</a>
         </li>
         <li className="navigation-mobile__list-item">
-          <a href="#">Services IEV</a>
+          <a href="/some/valid/uri">Services IEV</a>
         </li>
         <li className="navigation-mobile__list-item">
-          <a href="#">VIP</a>
+          <a href="/some/valid/uri">VIP</a>
         </li>
         <li className="navigation-mobile__list-item">
-          <a href="#">Partners</a>
+          <a href="/some/valid/uri">Partners</a>
         </li>
         <li className="navigation-mobile__list-item">
-          <a href="#">Press center</a>
+          <a href="/some/valid/uri">Press center</a>
         </li>
         <li className="navigation-mobile__list-item">
-          <a href="#">UA</a>
+          <a href="/some/valid/uri">UA</a>
         </li>
       </ul>
     </nav>

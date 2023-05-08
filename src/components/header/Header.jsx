@@ -12,27 +12,27 @@ const Header = () => {
   return (
     <>
       <div className="header__logo">
-        <a id="#" href="/"></a>
+        <a href="/some/valid/uri">.</a>
       </div>
       <nav className="header__navigation navigation">
         <ul className="navigation__list">
           <li className="navigation__list-item">
-            <a href="#">Passangers</a>
+            <a href="/some/valid/uri">Passangers</a>
           </li>
           <li className="navigation__list-item">
-            <a href="#">Services IEV</a>
+            <a href="/some/valid/uri">Services IEV</a>
           </li>
           <li className="navigation__list-item">
-            <a href="#">VIP</a>
+            <a href="/some/valid/uri">VIP</a>
           </li>
           <li className="navigation__list-item">
-            <a href="#">Partners</a>
+            <a href="/some/valid/uri">Partners</a>
           </li>
           <li className="navigation__list-item">
-            <a href="#">Press center</a>
+            <a href="/some/valid/uri">Press center</a>
           </li>
           <li className="navigation__list-item">
-            <a href="#">UA</a>
+            <a href="/some/valid/uri">UA</a>
           </li>
         </ul>
       </nav>

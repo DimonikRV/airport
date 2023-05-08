@@ -21,6 +21,7 @@
 }
 
 .calendar {
+  margin-left: 10px;
   @include for-medium-screen {
     position: relative;
     display: flex;

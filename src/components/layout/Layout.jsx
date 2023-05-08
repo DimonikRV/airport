@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchFlights } from '../../slices/search.flights.slice';
 import { useLocation, useParams, useSearchParams } from 'react-router-dom';
@@ -25,15 +25,18 @@ const Layout = () => {
 
   const setSearchParams = useSearchParams()[1];
 
-  const currentDate = { date: moment().format('DD-MM-YYYY') };
-
-  const setParams = setSearchParams(currentDate);
+  const setParams = useCallback(() => {
+    const currentDate = { date: moment().format('DD-MM-YYYY') };
+    setSearchParams(currentDate);
+  }, [setSearchParams]);
 
   useEffect(() => {
     dispatch(fetchFlights());
   }, [dispatch]);
 
-  useEffect(() => setParams(), [setParams]);
+  useEffect(() => {
+    setParams();
+  }, [setParams]);
 
   const status = useSelector(state => state.flights.status);
 

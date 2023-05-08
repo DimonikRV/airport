@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchFlights } from '../../slices/search.flights.slice';
 import { useLocation, useParams, useSearchParams } from 'react-router-dom';

@@ -37,35 +37,36 @@
   .search-container {
     padding: 0 10px;
   }
-  .loading-page {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    font-size: 40px;
-    font-weight: $fontWeightExtraLarge;
-    line-height: 2;
-    color: $titleColor;
+}
+
+.loading-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 40px;
+  font-weight: $fontWeightExtraLarge;
+  line-height: 2;
+  color: $titleColor;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0);
   }
-  @keyframes rotate {
-    from {
-      transform: rotate(0);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+  to {
+    transform: rotate(360deg);
   }
-  .loading-page_spinner {
-    display: block;
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    border: 8px solid $titleColor;
-    border-bottom-color: transparent;
-    animation: rotate 1s linear infinite;
-  }
+}
+.loading-page_spinner {
+  display: block;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 8px solid $titleColor;
+  border-bottom-color: transparent;
+  animation: rotate 1s linear infinite;
 }
 .footer {
   width: 100%;

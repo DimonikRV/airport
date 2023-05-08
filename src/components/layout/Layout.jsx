@@ -27,16 +27,17 @@ const Layout = () => {
 
   const setParams = useCallback(() => {
     const currentDate = { date: moment().format('DD-MM-YYYY') };
-    setSearchParams(currentDate);
-  }, [setSearchParams]);
+  }, []);
 
   useEffect(() => {
     dispatch(fetchFlights());
   }, [dispatch]);
 
   useEffect(() => {
-    setParams();
-  }, [setParams]);
+    const currentDate = { date: moment().format('DD-MM-YYYY') };
+    const setParams = () => setSearchParams(currentDate);
+    return setParams();
+  }, [setSearchParams]);
 
   const status = useSelector(state => state.flights.status);
 

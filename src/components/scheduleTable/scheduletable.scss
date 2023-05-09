@@ -66,6 +66,9 @@
   @include for-medium-screen {
     margin-left: 80px;
   }
+  @include for-large-screen {
+    margin-left: 70px;
+  }
 }
 .airline {
   @include for-medium-screen {
@@ -73,8 +76,5 @@
   }
   @include for-large-screen {
     margin-left: 90px;
-  }
-  @include for-xtra-large-screen {
-    margin-left: 70px;
   }
 }

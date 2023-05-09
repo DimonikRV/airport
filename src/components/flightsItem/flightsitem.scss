@@ -101,6 +101,9 @@
   @include for-large-screen {
     margin: 0;
   }
+  @include for-xtra-large-screen {
+    margin-left: 15px;
+  }
 }
 .status-field {
   @include for-medium-screen {
@@ -109,6 +112,9 @@
   @include for-large-screen {
     justify-content: center;
     min-width: 170px;
+  }
+  @include for-xtra-large-screen {
+    margin-right: 35px;
   }
 }
 
@@ -127,11 +133,7 @@
     }
   }
 }
-//     @include for-xtra-large-screen {
-//       font-size: 16px;
-//     }
-//   }
-// }
+
 .flight-field {
   font-weight: $fontWeightLarge;
   @include for-large-screen {

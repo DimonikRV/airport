@@ -1,6 +1,7 @@
 $sm: 320px;
 $md: 768px;
 $lg: 1024px;
+$xlg: 1440px;
 
 @mixin for-small-screen {
   @media screen and (min-width: $sm) {
@@ -16,6 +17,12 @@ $lg: 1024px;
 
 @mixin for-large-screen {
   @media screen and (min-width: $lg) {
+    @content;
+  }
+}
+
+@mixin for-xtra-large-screen {
+  @media screen and (min-width: $xlg) {
     @content;
   }
 }

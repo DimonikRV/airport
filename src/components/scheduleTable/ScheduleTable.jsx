@@ -19,11 +19,11 @@ const ScheduleTable = () => {
       <div className="flights-table__header">
         <ul className="flights-table-nav">
           <li className="flights-table-nav__item">Terminal</li>
-          <li className="flights-table-nav__item tab2">Schedule</li>
-          <li className="flights-table-nav__item tab2">Direction</li>
-          <li className="flights-table-nav__item tab2">Status</li>
-          <li className="flights-table-nav__item tab">Airline</li>
-          <li className="flights-table-nav__item ">Flight</li>
+          <li className="flights-table-nav__item">Schedule</li>
+          <li className="flights-table-nav__item">Direction</li>
+          <li className="flights-table-nav__item">Status</li>
+          <li className="flights-table-nav__item airline">Airline</li>
+          <li className="flights-table-nav__item flight">Flight</li>
         </ul>
       </div>
 

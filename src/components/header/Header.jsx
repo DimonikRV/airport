@@ -17,7 +17,7 @@ const Header = () => {
       <nav className="header__navigation navigation">
         <ul className="navigation__list">
           <li className="navigation__list-item">
-            <a href="/some/valid/uri">Passangers</a>
+            <a href="/some/valid/uri">Passengers</a>
           </li>
           <li className="navigation__list-item">
             <a href="/some/valid/uri">Services IEV</a>

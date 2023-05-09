@@ -31,7 +31,7 @@ a img {
   @include for-medium-screen {
     margin: 0 auto;
   }
-  @include for-large-screen {
+  @include for-xtra-large-screen {
     min-width: 1140px;
   }
 }

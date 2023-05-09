@@ -4,7 +4,7 @@
 .footer-menu {
   @include for-medium-screen {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     color: $mainTextColor;
     padding: 30px 0 15px 0;
     border-bottom: 1px solid $mainTextColor;
@@ -44,7 +44,7 @@
   display: none;
   border-bottom: 1px solid $mainTextColor;
   @include for-medium-screen {
-    flex: 1 1 45%;
+    flex: 1;
     display: flex;
     padding: 0 10px;
     font-size: 18px;
@@ -88,9 +88,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding-left: 20px;
     margin-top: 0;
-    margin-left: 40px;
   }
 }
 .info-block {
@@ -156,16 +154,25 @@
 
 .sub-footer {
   @include for-medium-screen {
+    flex: 1;
     display: flex;
+    justify-content: space-between;
     padding: 15px 20px;
     font-size: 12px;
     line-height: 1.5;
+  }
+  &-container {
+    @include for-medium-screen {
+      flex: 1;
+      display: flex;
+    }
   }
   font-size: 12px;
   line-height: 1.5;
   padding-bottom: 15px;
   &__row {
     @include for-medium-screen {
+      flex: 1;
       display: flex;
     }
     & > * {
@@ -175,10 +182,11 @@
 }
 
 .copyright {
-  flex: 1 1 20%;
+  flex: 1 1 25%;
+  display: flex;
   color: $mainTextColor;
   margin: 10px 60px 0 0;
-  @include for-large-screen {
+  @include for-medium-screen {
     margin-right: 60px;
   }
 }

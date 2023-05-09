@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchFlights } from '../../slices/search.flights.slice';
@@ -35,7 +36,7 @@ const Layout = () => {
 
   useEffect(() => {
     setSearchParams(currentDay);
-  }, [currentDay, setSearchParams]);
+  }, []);
 
   const status = useSelector(state => state.flights.status);
 

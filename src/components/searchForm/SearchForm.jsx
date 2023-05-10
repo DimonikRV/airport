@@ -5,7 +5,7 @@ const SearchForm = ({ newParams, setSearchParams }) => {
   const [searchText, setSearchText] = useState('');
 
   const handleChange = event => {
-    const text = event.target.value;
+    const text = event.target.value.trim();
     setSearchText(prevText => text);
   };
 

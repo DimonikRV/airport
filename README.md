@@ -1,24 +1,11 @@
 # Airport
 
-# [Link](https://cerulean-souffle-db258b.netlify.app/)
+# [Link](https://whimsical-brigadeiros-bd7214.netlify.app/departures?date=09-05-2023)
 ## _Tech Stack:_
 
 [![N|Solid](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)](https://sass-lang.com/)   [![N|Solid](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)](https://reactjs.org/) [![N|Solid](https://img.shields.io/badge/webpack-%238DD6F9.svg?style=for-the-badge&logo=webpack&logoColor=black)](https://webpack.js.org/)
-[![N|Solid]([https://img.shields.io/badge/webpack-%238DD6F9.svg?style=for-the-badge&logo=webpack&logoColor=black](https://img.shields.io/badge/Redux-Toolkit-violet.svg?style=for-the-badge&logo=Redux-Toolkit&logoColor=white))](https://redux-toolkit.js.org/)
+[![N|Solid](https://img.shields.io/badge/Redux-Toolkit-violet.svg?style=for-the-badge&logo=Redux-Toolkit&logoColor=white)](https://redux-toolkit.js.org/)
 
-
-## Installation
-
-For instalation dependencies:
-
-```sh
-cd calendar
-npm i
-```
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 

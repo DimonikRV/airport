@@ -29,5 +29,8 @@ Launches the test runner in the interactive watch mode.\
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
+### `Guide`
+This App shows flights for today by default. As nowadays there is no flights, you can choose month April 04 or other day to see some fake flights. The data comes from mockapi.io and filtered by date and flights number or city.
+
 #### Author: Dmytro Reva
 

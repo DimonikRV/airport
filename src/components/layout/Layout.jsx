@@ -2,7 +2,7 @@
 import React, { useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchFlights } from '../../slices/search.flights.slice';
-import { useLocation, useParams, useSearchParams } from 'react-router-dom';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import qs from 'qs';
 import moment from 'moment';
 import Header from '../header/Header';
@@ -16,14 +16,15 @@ import './layout.scss';
 
 const Layout = () => {
   const params = useLocation();
-  const whichRoute = useParams();
 
-  const [currentRoute] = Object.values(whichRoute);
+  const { pathname, search } = params;
+  console.log(search);
 
-  const newParams = qs.parse(params.search, { ignoreQueryPrefix: true });
+  const newParams = qs.parse(search, { ignoreQueryPrefix: true });
+  console.log(newParams);
 
   const dispatch = useDispatch();
-  const setSearchParams = useSearchParams()[1];
+  const [searcParams, setSearchParams] = useSearchParams();
 
   const currentDay = useMemo(
     () => (newParams?.date ? newParams : { date: moment().format('DD-MM-YYYY') }),
@@ -59,7 +60,7 @@ const Layout = () => {
           <div className="search-results__nav nav-tabs">
             <div className="search-container">
               <SearchForm newParams={newParams} setSearchParams={setSearchParams} />
-              <SearchNavigation currentRoute={currentRoute} />
+              <SearchNavigation currentRoute={pathname} searcParams={searcParams} />
               <SearchCalendar />
               <ScheduleTable />
               <Advertisment />

@@ -8,7 +8,6 @@ import {
   filter,
   filterByDate,
   filterByCode,
-  filterByCity,
   filterByDateCode,
   filterByDateCity,
   sortByDate,
@@ -26,15 +25,13 @@ const SearchFilter = ({ flightsData }) => {
 
   let filterData;
 
-  if (filterParams.date && currentCity) {
+  if (currentCity) {
     filterData = filterByDateCity(filterParams, currentCity, flightsData);
-  } else if (currentCity) {
-    filterData = filterByCity(currentCity, flightsData);
   } else {
     filterData = filter(flightsData, filterParams, filterByDate, filterByCode, filterByDateCode);
   }
 
-  const filterSortData = sortByDate(filterData, pathname);
+  const filterSortData = useMemo(() => sortByDate(filterData, pathname), [filterData, pathname]);
 
   return (
     <>

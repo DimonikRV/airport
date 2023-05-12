@@ -1,28 +1,24 @@
-import React from 'react';
+/* eslint-disable */
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import './searchnavigation.scss';
 
-const SearchNavigation = ({ currentRoute }) => {
+const SearchNavigation = ({ currentRoute, searcParams }) => {
+  const date = searcParams.get('date');
+
   const isActiveDeparture = classNames('categories__item', {
-    categories__item_active: currentRoute === 'departures',
+    categories__item_active: currentRoute === '/departures',
   });
 
   const isActiveArrive = classNames('categories__item categories__item-arrival', {
-    categories__item_active: currentRoute === 'arrivals',
+    categories__item_active: currentRoute === '/arrivals',
   });
 
-  const handleIsActive = event => {
-    const currentElem = event.target.closest('categories__item');
-    if (!currentElem) {
-      return;
-    }
-  };
-
   return (
-    <div className="nav-tabs__categories categories" onClick={handleIsActive}>
+    <div className="nav-tabs__categories categories">
       <button className={isActiveDeparture}>
-        <Link to="departures" className="way-to">
+        <Link to={`departures?date=${date}`} className="way-to">
           <span className="icon">
             <svg viewBox="0 0 40 28" version="1.1" xmlns="http://www.w3.org/2000/svg">
               <g id="Page-1" stroke="none">
@@ -42,7 +38,7 @@ const SearchNavigation = ({ currentRoute }) => {
         </Link>
       </button>
       <button className={isActiveArrive}>
-        <Link to="arrivals" className="way-to">
+        <Link to={`arrivals?date=${date}`} className="way-to">
           <span className="icon">
             <svg viewBox="0 0 40 28" version="1.1" xmlns="http://www.w3.org/2000/svg">
               <g id="Page-1" stroke="none">

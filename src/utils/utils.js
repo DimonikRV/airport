@@ -51,12 +51,7 @@ export const filter = (flightsData, filterParams, filterByDate, filterByCode, fi
   if (filterParams.search && filterParams.date) {
     return filterByDateCode(filterParams.date, filterParams.search, flightsData);
   }
-
-  if (filterParams.date) {
-    return filterByDate(filterParams.date, flightsData);
-  }
-
-  return filterByCode(filterParams.search, flightsData);
+  return filterByDate(filterParams.date, flightsData);
 };
 export const sortByDate = (filterData, pathname) => {
   if (!filterData) {

@@ -1,6 +1,7 @@
 /* eslint-disable */
 import React from 'react';
-import { Link, useSearchParams, useLocation } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
+import { useCurrentRootParams } from '../../hook/useCurrentRootParams';
 import classNames from 'classnames';
 import './searchnavigation.scss';
 
@@ -9,7 +10,7 @@ const SearchNavigation = () => {
 
   const date = searchParams.get('date');
 
-  const { pathname } = useLocation();
+  const { pathname } = useCurrentRootParams();
 
   const isActiveDeparture = classNames('categories__item', {
     categories__item_active: pathname === '/departures',

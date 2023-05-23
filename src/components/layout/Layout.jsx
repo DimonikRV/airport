@@ -2,8 +2,8 @@
 import React, { useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchFlights } from '../../slices/search.flights.slice';
-import { useLocation, useSearchParams } from 'react-router-dom';
-import qs from 'qs';
+import { useSearchParams } from 'react-router-dom';
+import { useCurrentRootParams } from '../../hook/useCurrentRootParams';
 import moment from 'moment';
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
@@ -15,20 +15,15 @@ import Advertisment from '../advertisment/Advertisment';
 import './layout.scss';
 
 const Layout = () => {
-  const params = useLocation();
-
-  const { pathname, search } = params;
-  console.log(search);
-
-  const newParams = qs.parse(search, { ignoreQueryPrefix: true });
-  console.log(newParams);
-
   const dispatch = useDispatch();
-  const [searcParams, setSearchParams] = useSearchParams();
+
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const { search } = useCurrentRootParams();
 
   const currentDay = useMemo(
-    () => (newParams?.date ? newParams : { date: moment().format('DD-MM-YYYY') }),
-    [newParams],
+    () => (search?.date ? search : { date: moment().format('DD-MM-YYYY') }),
+    [search],
   );
 
   useEffect(() => {
@@ -59,8 +54,8 @@ const Layout = () => {
         <div className="search-results container">
           <div className="search-results__nav nav-tabs">
             <div className="search-container">
-              <SearchForm newParams={newParams} setSearchParams={setSearchParams} />
-              <SearchNavigation currentRoute={pathname} searcParams={searcParams} />
+              <SearchForm />
+              <SearchNavigation />
               <SearchCalendar />
               <ScheduleTable />
               <Advertisment />

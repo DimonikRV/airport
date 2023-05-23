@@ -1,17 +1,28 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import { Routes, Route, Navigate } from 'react-router-dom';
-import store from './store/store';
+import { useSelector } from 'react-redux';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/layout/Layout';
+import SearchFilter from './components/searchFilter/SearchFilter';
+import { getByType } from './utils/utils';
+
+const departure = 'DEPARTURE';
+const arrival = 'ARRIVAL';
 
 const App = () => {
+  const { flights } = useSelector(state => state.flights);
+
+  const departureData = getByType(departure, flights);
+  const arrivalData = getByType(arrival, flights);
   return (
-    <Provider store={store}>
+    <BrowserRouter>
       <Routes>
-        <Route path="/*" element={<Layout />} />
-        <Route index element={<Navigate to="/departures" replace />} />
+        <Route path="/" element={<Layout />}>
+          <Route path="departures" element={<SearchFilter flightsData={departureData} />} />
+          <Route path="arrivals" element={<SearchFilter flightsData={arrivalData} />} />
+        </Route>
+        <Route index element={<Navigate to="/departures" />}></Route>
       </Routes>
-    </Provider>
+    </BrowserRouter>
   );
 };
 

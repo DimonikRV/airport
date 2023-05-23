@@ -1,8 +1,15 @@
+/* eslint-disable */
 import React, { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { useCurrentRootParams } from '../../hook/useCurrentRootParams';
 import './searchform.scss';
 
-const SearchForm = ({ newParams, setSearchParams }) => {
+const SearchForm = () => {
   const [searchText, setSearchText] = useState('');
+
+  const { search } = useCurrentRootParams();
+
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const handleChange = event => {
     const text = event.target.value.trim();
@@ -17,9 +24,10 @@ const SearchForm = ({ newParams, setSearchParams }) => {
     }
 
     setSearchParams({
-      ...newParams,
+      ...search,
       search: searchText,
     });
+
     setSearchText(prevText => '');
   };
 
@@ -44,14 +52,16 @@ const SearchForm = ({ newParams, setSearchParams }) => {
               </g>
             </svg>
           </button>
-          <input
-            className="form_search__input"
-            name="search"
-            type="text"
-            placeholder="Flights number or city"
-            value={searchText || ''}
-            onChange={handleChange}
-          />
+          <label>
+            <input
+              className="form_search__input"
+              name="search"
+              type="text"
+              placeholder="Flights number or city"
+              value={searchText || ''}
+              onChange={handleChange}
+            />
+          </label>
           <button className="form_search__button" type="button" onClick={handleSubmit}>
             Find
           </button>

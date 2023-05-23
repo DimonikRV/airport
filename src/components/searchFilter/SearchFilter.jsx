@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react';
-import { useLocation } from 'react-router-dom';
-import qs from 'qs';
+import { useCurrentRootParams } from '../../hook/useCurrentRootParams';
 import PropTypes from 'prop-types';
 import {
   getSelectedCity,
@@ -15,20 +14,18 @@ import {
 import FlightsList from '../flightsList/FlightsList';
 
 const SearchFilter = ({ flightsData }) => {
-  const { search, pathname } = useLocation();
-
-  const filterParams = qs.parse(search, { ignoreQueryPrefix: true });
+  const { search, pathname } = useCurrentRootParams();
 
   const cities = useMemo(() => getCitiesByType(flightsData), [flightsData]);
 
-  const currentCity = useMemo(() => getSelectedCity(cities, filterParams), [cities, filterParams]);
+  const currentCity = useMemo(() => getSelectedCity(cities, search), [cities, search]);
 
   let filterData;
 
   if (currentCity) {
-    filterData = filterByDateCity(filterParams, currentCity, flightsData);
+    filterData = filterByDateCity(search, currentCity, flightsData);
   } else {
-    filterData = filter(flightsData, filterParams, filterByDate, filterByCode, filterByDateCode);
+    filterData = filter(flightsData, search, filterByDate, filterByCode, filterByDateCode);
   }
 
   const filterSortData = useMemo(() => sortByDate(filterData, pathname), [filterData, pathname]);

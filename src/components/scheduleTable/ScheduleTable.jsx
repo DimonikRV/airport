@@ -1,18 +1,10 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Routes, Route } from 'react-router-dom';
-import { getByType } from '../../utils/utils';
-import SearchFilter from '../searchFilter/SearchFilter';
+import { Outlet } from 'react-router-dom';
 import './scheduletable.scss';
 
-const departure = 'DEPARTURE';
-const arrival = 'ARRIVAL';
-
 const ScheduleTable = () => {
-  const { flights, error } = useSelector(state => state.flights);
-
-  const departureData = getByType(departure, flights);
-  const arrivalData = getByType(arrival, flights);
+  const { error } = useSelector(state => state.flights);
 
   return (
     <div className="navdate-content__table flights-table">
@@ -27,14 +19,7 @@ const ScheduleTable = () => {
         </ul>
       </div>
 
-      {error ? (
-        <h2 className="flights-table_error">{error}</h2>
-      ) : (
-        <Routes>
-          <Route path="arrivals" element={<SearchFilter flightsData={arrivalData} />} />
-          <Route path="departures" element={<SearchFilter flightsData={departureData} />} />
-        </Routes>
-      )}
+      {error ? <h2 className="flights-table_error">{error}</h2> : <Outlet />}
     </div>
   );
 };

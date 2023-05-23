@@ -20,7 +20,7 @@ const App = () => {
           <Route path="departures" element={<SearchFilter flightsData={departureData} />} />
           <Route path="arrivals" element={<SearchFilter flightsData={arrivalData} />} />
         </Route>
-        <Route index element={<Navigate to="/departures" />}></Route>
+        <Route index element={<Navigate to="/departures" replace />}></Route>
       </Routes>
     </BrowserRouter>
   );
